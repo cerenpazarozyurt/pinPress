@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,12 +78,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { 
-                opacity: 0.2; 
+
+            0%,
+            100% {
+                opacity: 0.2;
                 transform: scale(1);
             }
-            50% { 
-                opacity: 0.4; 
+
+            50% {
+                opacity: 0.4;
                 transform: scale(1.05);
             }
         }
@@ -467,16 +471,22 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
-            from { 
+            from {
                 opacity: 0;
                 transform: translateY(-30px) scale(0.95);
             }
-            to { 
+
+            to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
@@ -720,17 +730,17 @@
             .brand-title {
                 font-size: 2rem;
             }
-            
+
             .action-card {
                 margin: 10px;
                 padding: 1.5rem;
             }
-            
+
             .map-container {
                 width: 280px;
                 height: 210px;
             }
-            
+
             .floating-circle {
                 display: none;
             }
@@ -764,12 +774,14 @@
                 height: 180px;
             }
 
-            .circle-1, .circle-2 {
+            .circle-1,
+            .circle-2 {
                 width: 80px;
                 height: 80px;
             }
-            
-            .circle-3, .circle-4 {
+
+            .circle-3,
+            .circle-4 {
                 width: 60px;
                 height: 60px;
             }
@@ -788,18 +800,35 @@
             animation: pinPulse 2s ease-in-out infinite;
         }
 
-        .memory-pin:nth-child(1) { animation-delay: 0s; }
-        .memory-pin:nth-child(2) { animation-delay: 0.4s; }
-        .memory-pin:nth-child(3) { animation-delay: 0.8s; }
-        .memory-pin:nth-child(4) { animation-delay: 1.2s; }
-        .memory-pin:nth-child(5) { animation-delay: 1.6s; }
+        .memory-pin:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .memory-pin:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .memory-pin:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .memory-pin:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+
+        .memory-pin:nth-child(5) {
+            animation-delay: 1.6s;
+        }
 
         @keyframes pinPulse {
-            0%, 100% { 
+
+            0%,
+            100% {
                 transform: scale(1);
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
             }
-            50% { 
+
+            50% {
                 transform: scale(1.05);
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
             }
@@ -812,6 +841,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Background decorative elements -->
     <div class="bg-decorative">
@@ -845,16 +875,16 @@
                         <div class="landmass landmass-2"></div>
                         <div class="landmass landmass-3"></div>
                         <div class="landmass landmass-4"></div>
-                        
+
                         <!-- Rivers/waterways -->
                         <div class="river river-1"></div>
                         <div class="river river-2"></div>
-                        
+
                         <!-- Roads/paths -->
                         <div class="road road-1"></div>
                         <div class="road road-2"></div>
                     </div>
-                    
+
                     <!-- Location pins with hearts -->
                     <div class="memory-pin pin-red" title="İstanbul Hatırası">
                         <i class="fas fa-heart"></i>
@@ -871,7 +901,7 @@
                     <div class="memory-pin pin-pink" title="Bodrum Akşamı">
                         <i class="fas fa-heart"></i>
                     </div>
-                    
+
                     <!-- Map grid lines -->
                     <div class="map-grid">
                         <div class="grid-line-v" style="left: 25%;"></div>
@@ -909,7 +939,7 @@
             <button class="modal-close" id="closeModal">
                 <i class="fas fa-times"></i>
             </button>
-            
+
             <div class="modal-header">
                 <div class="modal-icon-container">
                     <i class="fas fa-map-marker-alt modal-icon-main"></i>
@@ -931,17 +961,16 @@
             <!-- Login Form -->
             <form id="loginForm" action="{{ route('login') }}" method="POST">
                 @csrf
-                
+
                 <div class="form-group">
                     <i class="fas fa-envelope form-icon"></i>
-                    <input type="email" name="email" class="form-control" 
-                           placeholder="E-posta" value="{{ old('email') }}" required>
+                    <input type="email" name="email" class="form-control" placeholder="E-posta"
+                        value="{{ old('email') }}" required>
                 </div>
-                
+
                 <div class="form-group">
                     <i class="fas fa-lock form-icon"></i>
-                    <input type="password" name="password" class="form-control" 
-                           placeholder="Şifre" required>
+                    <input type="password" name="password" class="form-control" placeholder="Şifre" required>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -959,45 +988,56 @@
                 <button type="submit" class="submit-btn">
                     Giriş Yap
                 </button>
+
+                <div class="mt-3 text-center">
+                    <a href="{{ route('auth.google') }}" class="btn btn-google">
+                        <i class="fab fa-google"></i> Google ile Giriş Yap
+                    </a>
+                </div>
             </form>
 
             <!-- Register Form -->
             <form id="registerForm" action="{{ route('register') }}" method="POST" style="display: none;">
                 @csrf
-                
+
                 <div class="form-group">
                     <i class="fas fa-user form-icon"></i>
-                    <input type="text" name="name" class="form-control" 
-                           placeholder="Ad Soyad" value="{{ old('name') }}" required>
+                    <input type="text" name="name" class="form-control" placeholder="Ad Soyad"
+                        value="{{ old('name') }}" required>
                 </div>
-                
+
                 <div class="form-group">
                     <i class="fas fa-envelope form-icon"></i>
-                    <input type="email" name="email" class="form-control" 
-                           placeholder="E-posta" value="{{ old('email') }}" required>
-                </div>
-                
-                <div class="form-group">
-                    <i class="fas fa-lock form-icon"></i>
-                    <input type="password" name="password" class="form-control" 
-                           placeholder="Şifre" required>
+                    <input type="email" name="email" class="form-control" placeholder="E-posta"
+                        value="{{ old('email') }}" required>
                 </div>
 
                 <div class="form-group">
                     <i class="fas fa-lock form-icon"></i>
-                    <input type="password" name="password_confirmation" class="form-control" 
-                           placeholder="Şifre Tekrar" required>
+                    <input type="password" name="password" class="form-control" placeholder="Şifre" required>
+                </div>
+
+                <div class="form-group">
+                    <i class="fas fa-lock form-icon"></i>
+                    <input type="password" name="password_confirmation" class="form-control"
+                        placeholder="Şifre Tekrar" required>
                 </div>
 
                 <button type="submit" class="submit-btn">
                     Kayıt Ol
                 </button>
+
+                <div class="mt-3 text-center">
+                    <a href="{{ route('auth.google') }}" class="btn btn-google">
+                        <i class="fab fa-google"></i> Google ile Kayıt Ol
+                    </a>
+                </div>
             </form>
 
             <!-- Toggle Links -->
             <div id="loginToggle" class="toggle-text">
                 <p>
-                    Hesabınız yok mu? 
+                    Hesabınız yok mu?
                     <button type="button" onclick="showRegister()" class="link-orange btn-link">
                         Kayıt olun
                     </button>
@@ -1006,7 +1046,7 @@
 
             <div id="registerToggle" class="toggle-text" style="display: none;">
                 <p>
-                    Zaten hesabınız var mı? 
+                    Zaten hesabınız var mı?
                     <button type="button" onclick="showLogin()" class="link-orange btn-link">
                         Giriş yapın
                     </button>
@@ -1056,11 +1096,11 @@
             // Update tabs
             document.getElementById('loginTab').classList.add('active');
             document.getElementById('registerTab').classList.remove('active');
-            
+
             // Show/hide forms
             document.getElementById('loginForm').style.display = 'block';
             document.getElementById('registerForm').style.display = 'none';
-            
+
             // Show/hide toggle links
             document.getElementById('loginToggle').style.display = 'block';
             document.getElementById('registerToggle').style.display = 'none';
@@ -1070,11 +1110,11 @@
             // Update tabs
             document.getElementById('registerTab').classList.add('active');
             document.getElementById('loginTab').classList.remove('active');
-            
+
             // Show/hide forms
             document.getElementById('registerForm').style.display = 'block';
             document.getElementById('loginForm').style.display = 'none';
-            
+
             // Show/hide toggle links
             document.getElementById('registerToggle').style.display = 'block';
             document.getElementById('loginToggle').style.display = 'none';
@@ -1092,20 +1132,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mapContainer = document.querySelector('.map-container');
             const actionCard = document.querySelector('.action-card');
-            
+
             // Initial state
             mapContainer.style.opacity = '0';
             mapContainer.style.transform = 'translateY(30px) rotate(1deg)';
             actionCard.style.opacity = '0';
             actionCard.style.transform = 'translateY(30px)';
-            
+
             // Animate in
             setTimeout(() => {
                 mapContainer.style.transition = 'all 0.6s ease';
                 mapContainer.style.opacity = '1';
                 mapContainer.style.transform = 'translateY(0) rotate(1deg)';
             }, 200);
-            
+
             setTimeout(() => {
                 actionCard.style.transition = 'all 0.6s ease';
                 actionCard.style.opacity = '1';
@@ -1119,7 +1159,7 @@
                 this.style.transform = 'scale(1.05)';
                 this.style.transition = 'transform 0.2s ease';
             });
-            
+
             item.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
             });
@@ -1155,4 +1195,5 @@
         });
     </script>
 </body>
+
 </html>
