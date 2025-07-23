@@ -1,4 +1,5 @@
-PinPress 🧭
+PinPress
+
 PinPress, kullanıcıların seyahat anılarını dijital harita üzerinde paylaşabildiği bir "Mini Travel Memories" projesidir.
 
 🚀 Başlangıç Özellikleri
